@@ -1,1 +1,2 @@
 Hey, this file was created by NodeJs
+This text was appended using appendFileSync method
