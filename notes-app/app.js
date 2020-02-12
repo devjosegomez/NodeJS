@@ -3,9 +3,15 @@
 
 // import library fs
 const fs = require('fs')
+//import custom script
+const sum = require('./utils.js')
 
 // Create a file in this case note.txt
 fs.writeFileSync("notes.txt", "Hey, this file was created by NodeJs")
 
 // Appending text to a file 
 fs.appendFileSync("notes.txt", "\nThis text was appended using appendFileSync method")
+
+const total = sum(1,5)
+
+console.log(total)
