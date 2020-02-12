@@ -5,9 +5,10 @@
 const fs = require('fs')
 //import custom script
 const sum = require('./utils.js')
-
 //import notes.js
 const getNotes = require('./notes.js')
+//import validator.js
+const validator = require('validator')
 
 // Create a file in this case note.txt
 fs.writeFileSync("notes.txt", "Hey, this file was created by NodeJs")
@@ -17,6 +18,10 @@ fs.appendFileSync("notes.txt", "\nThis text was appended using appendFileSync me
 
 const total = sum(1,5)
 const allNotes = getNotes()
+const email = "devjose@github.com"
 
 console.log(total)
 console.log(allNotes)
+console.log(validator.isEmail(email))
+
+
