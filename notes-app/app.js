@@ -6,6 +6,9 @@ const fs = require('fs')
 //import custom script
 const sum = require('./utils.js')
 
+//import notes.js
+const getNotes = require('./notes.js')
+
 // Create a file in this case note.txt
 fs.writeFileSync("notes.txt", "Hey, this file was created by NodeJs")
 
@@ -13,5 +16,7 @@ fs.writeFileSync("notes.txt", "Hey, this file was created by NodeJs")
 fs.appendFileSync("notes.txt", "\nThis text was appended using appendFileSync method")
 
 const total = sum(1,5)
+const allNotes = getNotes()
 
 console.log(total)
+console.log(allNotes)
