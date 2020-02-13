@@ -9,6 +9,8 @@ const sum = require('./utils.js')
 const getNotes = require('./notes.js')
 //import validator.js
 const validator = require('validator')
+//import chalk
+const chalk = require('chalk')
 
 // Create a file in this case note.txt
 fs.writeFileSync("notes.txt", "Hey, this file was created by NodeJs")
@@ -23,5 +25,10 @@ const email = "devjose@github.com"
 console.log(total)
 console.log(allNotes)
 console.log(validator.isEmail(email))
+
+// usage of chalk.js
+console.log(chalk.green.bold.inverse("Success!"))
+
+
 
 
