@@ -19,8 +19,23 @@ yargs.version('1.0.0')
 yargs.command({
     command: 'add',                     //Command name
     describe: 'Add a new note',         //Description of the command
-    handler: () =>{                     //Funtion that will execute that command
-        console.log('Adding a new note!!!')
+    builder: {                          //Options
+        title:{
+            describe: 'Note title',
+            demandOption: true,         //Required option
+            type: 'string'              //Validate that must be a string
+        },
+        body:{
+            describe: 'Note body',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) =>{                     //Funtion that will execute that command
+        console.log(chalk.yellow('Adding a new note!!!'))
+        console.log(chalk.blueBright('Title: ' + argv.title))
+        console.log(chalk.green('Note: ' + argv.body))
+        console.log(chalk.green.inverse('Success!!'))
     }
 })
 
@@ -52,14 +67,8 @@ yargs.command({
 })
 
 //Get command from terminal as an argument
-const cmd = process.argv[2]
-console.log(cmd)
+//const cmd = process.argv[2]
+//console.log(cmd)
 //Get args vector with yargs
-console.log(yargs.argv)
-
-
-
-
-
-
-
+//console.log(yargs.argv)
+yargs.parse()
